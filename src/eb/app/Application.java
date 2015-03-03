@@ -5,6 +5,9 @@ import eb.models.*;
 import eb.controllers.*;
 import eb.views.*;
 
+import javax.swing.*;
+import java.awt.*;
+
 public class Application
 {
 
@@ -14,6 +17,12 @@ public class Application
     ServiceView sv = new ServiceView(sm);
     ServiceController sc = new ServiceController(sm, sv);
 
+    BaseFrame bf = BaseFrame.getBaseFrame();
+    Container window = bf.getContentPane();
 
+    window.add(sv);
+
+    bf.pack();
+    bf.setVisible(true);
   }
 }

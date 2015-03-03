@@ -3,8 +3,10 @@ package eb.views;
 import eb.models.*;
 
 import javax.swing.*;
+import java.awt.*;
 
-public class ServiceView extends JPanel implements ServiceObserver
+// for a customer request a service.
+public class ServiceView extends JPanel// implements ServiceObserver
 {
   private JButton oilChange = new JButton("Oil Change");
   private JButton tyreChange = new JButton("Tyre Change");;
@@ -20,6 +22,8 @@ public class ServiceView extends JPanel implements ServiceObserver
   public ServiceView(ServiceModel sm)
   {
     this.model = sm;
+
+    this.setLayout(new GridLayout(7, 0));
 
     this.add(oilChange);
     this.add(tyreChange);

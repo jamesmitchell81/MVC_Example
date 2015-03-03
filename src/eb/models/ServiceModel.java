@@ -1,6 +1,6 @@
 package eb.models;
 
-public class ServiceModel implements ServiceObserver
+public class ServiceModel// implements ServiceObserver
 {
   public ServiceModel()
   {
