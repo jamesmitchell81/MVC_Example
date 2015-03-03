@@ -1,13 +1,20 @@
 package eb.app;
 
+import eb.models.*;
+import eb.controllers.*;
+import eb.views.*;
+
 public class Application
 {
 
   public static void main(String[] args)
   {
-    ServicePanel sp = new ServicePanel();
-    Service service = new Service();
-    ServiceController sc = new ServiceController();
+    ServiceModel sm = new ServiceModel();
+    ServiceView sv = new ServiceView(sm);
+    ServiceController sc = new ServiceController(sm, sv);
+
+
+
 
   }
 }

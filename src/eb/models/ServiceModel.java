@@ -1,6 +1,8 @@
 package eb.models;
 
-public class ServiceModel // implements ServiceObserver
+
+
+public class ServiceModel implements ServiceObserver
 {
   public ServiceModel()
   {
@@ -14,7 +16,7 @@ public class ServiceModel // implements ServiceObserver
 
   public Service getService(int id)
   {
-
+    return null;
   }
 
   public void removeService(int id)

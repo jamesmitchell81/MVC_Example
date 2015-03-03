@@ -1,12 +1,5 @@
 package eb.models;
 
-    // Oil Change - £26
-    // Tyre Change - £40
-    // Paint Respray (Per panel) - £100
-    // M.O.T. - £54
-    // Full service - £150
-    // Replacement Exhaust - £52
-
 public class Service
 {
   private double oilChange;
