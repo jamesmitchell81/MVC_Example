@@ -2,8 +2,7 @@ package eb.models;
 
 public interface ServiceObserver
 {
-  // add.
-  // remove.
-  // notify.
-  // ...
+  public void addObserver(Observer obvr);
+  public void removeObserver(Observer obvr);
+  public void notify();
 }

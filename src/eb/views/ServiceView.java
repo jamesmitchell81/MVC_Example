@@ -12,6 +12,7 @@ public class ServiceView extends JPanel implements ServiceObserver
   private JButton mot = new JButton("MOT");;
   private JButton fullService = new JButton("Full Service");;
   private JButton replaceExhaust = new JButton("Replace Exhaust");
+  private JLabel display = new JLabel();
 
   private ServiceModel model;
 
@@ -26,5 +27,7 @@ public class ServiceView extends JPanel implements ServiceObserver
     this.add(mot);
     this.add(fullService);
     this.add(replaceExhaust);
+
+    this.add(display);
   }
 }

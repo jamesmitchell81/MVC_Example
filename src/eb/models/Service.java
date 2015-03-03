@@ -9,6 +9,8 @@ public class Service
   private double fullService;
   private double replaceExhaust;
 
+  private String customerName;
+
   public Service()
   {
     this.oilChange = 26.0;
