@@ -1,5 +1,7 @@
 package eb.models;
 
+import eb.util.*;
+
 public interface  ServiceModelInterface
 {
   void addOilChange();
@@ -10,7 +12,7 @@ public interface  ServiceModelInterface
   void addReplaceExhaust();
   double getTotalCost();
 
-  // addObserver.
-  // removeObserver.
-  // notify
+  void addObserver(ObserverInterface obs);
+  void removeObserver(ObserverInterface obs);
+  void notifyObservers();
 }

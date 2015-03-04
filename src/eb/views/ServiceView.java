@@ -25,6 +25,7 @@ public class ServiceView extends JPanel implements ObserverInterface
   public ServiceView(ServiceModelInterface sm, ServiceController sc)
   {
     this.model = sm;
+    this.model.addObserver((ObserverInterface)this);
     this.controller = sc;
 
     this.setLayout(new GridLayout(9, 0));
