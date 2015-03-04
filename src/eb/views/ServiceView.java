@@ -1,6 +1,7 @@
 package eb.views;
 
 import eb.models.*;
+import eb.util.*;
 import eb.controllers.*;
 
 import javax.swing.*;
@@ -17,11 +18,11 @@ public class ServiceView extends JPanel implements ObserverInterface
   private JButton replaceExhaust;
   private JLabel display;
 
-  private ServiceModel model;
+  private ServiceModelInterface model;
   private ServiceController controller;
 
   // serviceModel
-  public ServiceView(ServiceModel sm, ServiceController sc)
+  public ServiceView(ServiceModelInterface sm, ServiceController sc)
   {
     this.model = sm;
     this.controller = sc;
@@ -32,7 +33,7 @@ public class ServiceView extends JPanel implements ObserverInterface
 
   public void update()
   {
-    double cost = sm.getTotalCost();
+    double cost = model.getTotalCost();
     this.display.setText("Cost:" + cost);
   }
 

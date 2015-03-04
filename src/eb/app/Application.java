@@ -13,7 +13,7 @@ public class Application
 
   public static void main(String[] args)
   {
-    ServiceModel sm = new ServiceModel();
+    ServiceModelInterface sm = new ServiceStandardModel();
     ServiceController sc = new ServiceController(sm);
     ServiceView sv = new ServiceView(sm, sc);
 

@@ -1,11 +1,12 @@
 package eb.models;
 
-public class ServiceModelBusiness implements  ServiceModelInterface
+public class ServiceStandardModel implements  ServiceModelInterface
 {
-  private Service service;
-  private double cost;
+  protected Service service;
+  protected double cost;
+  private double vat = 0.175;
 
-  public ServiceModel()
+  public ServiceStandardModel()
   {
     service = new Service();
   }
@@ -43,9 +44,7 @@ public class ServiceModelBusiness implements  ServiceModelInterface
 
   public double getTotalCost()
   {
-    return cost;
+    System.out.println(cost * vat);
+    return cost * vat;
   }
-
-
-
 }
