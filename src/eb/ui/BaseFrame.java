@@ -25,6 +25,11 @@ public class BaseFrame extends JFrame
     return instance;
   }
 
+  public static void clearFrame()
+  {
+    getBaseFrame().getContentPane().removeAll();
+  }
+
   public static int getBaseFrameWidth()
   {
     return (int)getBaseFrame().getSize().getWidth();

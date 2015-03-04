@@ -5,7 +5,7 @@ import java.util.*;
 
 public class ServiceStandardModel implements ServiceModelInterface
 {
-  protected ArrayList<ObserverInterface> observers = new ArrayList();
+  protected ArrayList<ObserverInterface> observers = new ArrayList<>();
   protected Service service;
   protected double cost;
   private double vat = 0.175;

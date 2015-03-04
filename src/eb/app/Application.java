@@ -14,11 +14,11 @@ public class Application
   public static void main(String[] args)
   {
     BaseFrame bf = BaseFrame.getBaseFrame();
-
     bf.setLayout(new BorderLayout());
-
-    NavigationView nf = new NavigationView();
     Container window = bf.getContentPane();
+
+    NavigationController nc = new NavigationController();
+    NavigationView nf = new NavigationView(nc);
 
     window.add(nf, BorderLayout.WEST);
 

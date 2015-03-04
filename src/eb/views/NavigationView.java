@@ -1,20 +1,26 @@
 package eb.views;
 
+import eb.controllers.*;
+
 import javax.swing.*;
 import java.awt.*;
 
-public class NaviationView
+public class NavigationView extends JPanel
 {
   private JButton standard;
   private JButton business;
   private JButton admin;
 
-  private NaviationController controller;
+  private NavigationController controller;
 
-  public NaviationView(NaviationController controller)
+  public NavigationView(NavigationController controller)
   {
     this.controller = controller;
-    this.setLayout(new GridLayout(0, 3));
+    this.setLayout(new GridLayout(3, 0));
+
+    this.setSize(new Dimension(100, 500));
+
+    createView();
   }
 
   private void createView()

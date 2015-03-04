@@ -27,6 +27,7 @@ public class ServiceView extends JPanel implements ObserverInterface
     this.controller = sc;
 
     this.setLayout(new GridLayout(9, 0));
+    this.setSize(new Dimension(400, 500));
     this.createView();
   }
 
