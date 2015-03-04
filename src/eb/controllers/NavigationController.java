@@ -18,16 +18,18 @@ public class NavigationController implements ActionListener
   {
     String cmb = eve.getActionCommand();
     BaseFrame bf = BaseFrame.getBaseFrame();
-
     NavigationView nv = new NavigationView(this);
 
     bf.clearFrame();
 
     if ( cmb == "Do Admin" )
     {
-      // load admin into view.
-      // pass in the model.
+      ServiceModelInterface sm = new ServiceStandardModel();
+      ServiceController sc = new ServiceController(sm);
+      ServiceAdminView view = new ServiceAdminView(sm, sc);
+
       bf.add(nv, BorderLayout.WEST);
+      bf.add(view, BorderLayout.EAST);
       bf.repaint();
       bf.revalidate();
     }

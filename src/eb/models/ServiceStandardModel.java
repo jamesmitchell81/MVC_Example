@@ -51,6 +51,11 @@ public class ServiceStandardModel implements ServiceModelInterface
     notifyObservers();
   }
 
+  public Service getService()
+  {
+    return this.service;
+  }
+
   public double getTotalCost()
   {
     return cost * vat;
