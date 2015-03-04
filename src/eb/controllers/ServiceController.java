@@ -1,8 +1,6 @@
 package eb.controllers;
 
-import eb.views.*;
 import eb.models.*;
-
 import java.awt.event.*;
 
 public class ServiceController implements ActionListener
@@ -16,11 +14,12 @@ public class ServiceController implements ActionListener
 
   public void actionPerformed(ActionEvent eve)
   {
-    // Object src = eve.getSource();
     String cmb = eve.getActionCommand();
 
     if ( cmb == "Add Oil Change" )
+    {
       this.model.addOilChange();
+    }
 
     if ( cmb == "Add Tyre Change" )
       this.model.addTyreChange();

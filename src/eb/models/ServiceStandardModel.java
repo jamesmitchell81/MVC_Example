@@ -53,7 +53,6 @@ public class ServiceStandardModel implements ServiceModelInterface
 
   public double getTotalCost()
   {
-    System.out.println(cost * vat);
     return cost * vat;
   }
 

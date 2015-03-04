@@ -7,7 +7,6 @@ import eb.controllers.*;
 import javax.swing.*;
 import java.awt.*;
 
-// for a customer request a service.
 public class ServiceView extends JPanel implements ObserverInterface
 {
   private JButton oilChange;
@@ -21,7 +20,6 @@ public class ServiceView extends JPanel implements ObserverInterface
   private ServiceModelInterface model;
   private ServiceController controller;
 
-  // serviceModel
   public ServiceView(ServiceModelInterface sm, ServiceController sc)
   {
     this.model = sm;

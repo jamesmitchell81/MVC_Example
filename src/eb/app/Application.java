@@ -13,14 +13,14 @@ public class Application
 
   public static void main(String[] args)
   {
-    ServiceModelInterface sm = new ServiceStandardModel();
-    ServiceController sc = new ServiceController(sm);
-    ServiceView sv = new ServiceView(sm, sc);
-
     BaseFrame bf = BaseFrame.getBaseFrame();
+
+    bf.setLayout(new BorderLayout());
+
+    NavigationView nf = new NavigationView();
     Container window = bf.getContentPane();
 
-    window.add(sv);
+    window.add(nf, BorderLayout.WEST);
 
     bf.pack();
     bf.setVisible(true);
