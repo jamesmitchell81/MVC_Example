@@ -21,10 +21,33 @@ public class Service
     this.replaceExhaust = 52.0;
   }
 
-  public void getOilChangeCost()
+  public double getOilChangeCost()
   {
     return this.oilChange;
   }
 
-  // getters and setters.
+  public double getTyreChangeCost()
+  {
+    return this.tyreChange;
+  }
+
+  public double getPaintResprayCost()
+  {
+    return this.paintRespray;
+  }
+
+  public double getMOTCost()
+  {
+    return this.mot;
+  }
+
+  public double getFullServiceCost()
+  {
+    return this.fullService;
+  }
+
+  public double getReplaceExhaustCost()
+  {
+    return this.replaceExhaust;
+  }
 }

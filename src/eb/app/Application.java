@@ -14,8 +14,8 @@ public class Application
   public static void main(String[] args)
   {
     ServiceModel sm = new ServiceModel();
-    ServiceView sv = new ServiceView(sm);
-    ServiceController sc = new ServiceController(sm, sv);
+    ServiceController sc = new ServiceController(sm);
+    ServiceView sv = new ServiceView(sm, sc);
 
     BaseFrame bf = BaseFrame.getBaseFrame();
     Container window = bf.getContentPane();

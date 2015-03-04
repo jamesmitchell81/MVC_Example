@@ -7,9 +7,9 @@ import java.awt.event.*;
 
 public class ServiceController implements ActionListener
 {
-  private ServiceModel model;
+  private ServiceModelInterface model;
 
-  public ServiceController(ServiceModel sm)
+  public ServiceController(ServiceModelInterface sm)
   {
     this.model = sm;
   }
@@ -20,9 +20,22 @@ public class ServiceController implements ActionListener
     String cmb = eve.getActionCommand();
 
     if ( cmb == "Add Oil Change" )
-    {
       this.model.addOilChange();
-    }
+
+    if ( cmb == "Add Tyre Change" )
+      this.model.addTyreChange();
+
+    if ( cmb == "Add Paint Respray" )
+      this.model.addPaintRespray();
+
+    if ( cmb == "Add MOT" )
+      this.model.addMOT();
+
+    if ( cmb == "Add Full Service" )
+      this.model.addFullService();
+
+    if ( cmb == "Add Replace Exhaust" )
+      this.model.addReplaceExhaust();
 
   }
 }
