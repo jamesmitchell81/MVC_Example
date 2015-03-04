@@ -13,6 +13,7 @@ public interface  ServiceModelInterface
   double getTotalCost();
 
   void updateServicePrices(Service s);
+  Service getService();
 
   void addObserver(ObserverInterface obs);
   void removeObserver(ObserverInterface obs);

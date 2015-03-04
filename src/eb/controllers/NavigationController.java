@@ -26,7 +26,7 @@ public class NavigationController implements ActionListener
     {
       ServiceModelInterface sm = new ServiceStandardModel();
       ServiceController sc = new ServiceController(sm);
-      ServiceAdminView view = new ServiceAdminView(sm, sc);
+      ServiceAdminView view = new ServiceAdminView(sm);
 
       bf.add(nv, BorderLayout.WEST);
       bf.add(view, BorderLayout.EAST);

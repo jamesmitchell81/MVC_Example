@@ -24,6 +24,7 @@ public class ServiceStandardModel implements ServiceModelInterface
     // create query.
 
     // update database.
+    notifyObservers();
   }
 
   public void addOilChange()

@@ -6,6 +6,7 @@ import eb.controllers.*;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
 public class ServiceAdminView extends JPanel implements ObserverInterface
 {
@@ -25,7 +26,7 @@ public class ServiceAdminView extends JPanel implements ObserverInterface
   {
     this.model = sm;
     this.model.addObserver((ObserverInterface)this);
-    this.controller = new ServiceAdminController();
+    this.controller = new ServiceAdminController(this.model);
 
     this.setLayout(new GridLayout(9, 2));
     this.setSize(new Dimension(400, 500));
@@ -47,15 +48,17 @@ public class ServiceAdminView extends JPanel implements ObserverInterface
 
   private void createView()
   {
-    oilChange = new JTextField("" + this.model.getOilChange());
-    tyreChange = new JTextField("" + this.model.getTyreChange());
-    paintRespray = new JTextField("" + this.model.getPaintRespray());
-    mot = new JTextField("" + this.model.getMOT());
-    fullService = new JTextField("" + this.model.getFullService());
-    replaceExhaust = new JTextField("" + this.model.getReplaceExhaust());
+    Service s = this.model.getService();
+
+    oilChange = new JTextField("" + s.getOilChangeCost());
+    tyreChange = new JTextField("" + s.getTyreChangeCost());
+    paintRespray = new JTextField("" + s.getPaintResprayCost());
+    mot = new JTextField("" + s.getMOTCost());
+    fullService = new JTextField("" + s.getFullServiceCost());
+    replaceExhaust = new JTextField("" + s.getReplaceExhaustCost());
 
     updateValues = new JButton("Update Values");
-    updateValues.addActionListoner(this.controller);
+    updateValues.addActionListener((ActionListener)this.controller);
     updateValues.setActionCommand("Update Values");
 
     this.add(new JLabel("Oil Change"));
@@ -81,19 +84,22 @@ public class ServiceAdminView extends JPanel implements ObserverInterface
 
   private class ServiceAdminController implements ActionListener
   {
-    public ServiceAdminController()
-    {
+    private ServiceModelInterface model;
 
+    public ServiceAdminController(ServiceModelInterface model)
+    {
+      this.model = model;
     }
 
     public void actionPerformed(ActionEvent eve)
     {
+      String cmb = eve.getActionCommand();
+
       if ( cmb == "Update Values" )
       {
-        Service s = new Service()
+        Service s = new Service();
 
         this.model.updateServicePrices(s);
-
       }
     }
   }
