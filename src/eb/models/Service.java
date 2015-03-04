@@ -21,5 +21,10 @@ public class Service
     this.replaceExhaust = 52.0;
   }
 
+  public void getOilChangeCost()
+  {
+    return this.oilChange;
+  }
+
   // getters and setters.
 }

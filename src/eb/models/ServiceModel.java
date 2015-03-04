@@ -1,20 +1,24 @@
 package eb.models;
 
-public class ServiceModel// implements ServiceObserver
+public class ServiceModel
 {
+  private Service service;
+  private double cost;
+
   public ServiceModel()
   {
-
+    service = new Service();
   }
 
-  public void createService(Service service)
+  public void addOilChange()
   {
-
+    cost += service.getOilChangeCost();
+    // notify.
   }
 
-  public Service getService(int id)
+  public double getTotalCost()
   {
-    return null;
+    return cost;
   }
 
   public void removeService(int id)

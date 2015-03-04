@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 
 // for a customer request a service.
-public class ServiceView extends JPanel// implements ServiceObserver
+public class ServiceView extends JPanel implements ObserverInterface
 {
   private JButton oilChange;
   private JButton tyreChange;
@@ -17,31 +17,56 @@ public class ServiceView extends JPanel// implements ServiceObserver
   private JLabel display;
 
   private ServiceModel model;
+  private ServiceController controller;
 
   // serviceModel
-  public ServiceView(ServiceModel sm)
+  public ServiceView(ServiceModel sm, ServiceController sc)
   {
     this.model = sm;
+    this.controller = sc;
 
-    this.setLayout(new GridLayout(7, 0));
+    this.setLayout(new GridLayout(9, 0));
     this.createView();
+  }
+
+  public void update()
+  {
+    double cost = sm.getTotalCost();
+    this.display.setText("Cost:" + cost);
   }
 
   private void createView()
   {
-
     this.oilChange = new JButton("Oil Change");
     this.oilChange.setHorizontalAlignment(SwingConstants.LEFT);
+    this.addActionListener(this.controller);
+    this.setActionCommand("Add Oil Change");
+
     this.tyreChange = new JButton("Tyre Change");
     this.tyreChange.setHorizontalAlignment(SwingConstants.LEFT);
+    this.addActionListener(this.controller);
+    this.setActionCommand("Add Tyre Change");
+
     this.paintRespray = new JButton("Paint Respray");
     this.paintRespray.setHorizontalAlignment(SwingConstants.LEFT);
+    this.addActionListener(this.controller);
+    this.setActionCommand("Add Paint Respray");
+
     this.mot = new JButton("MOT");
     this.mot.setHorizontalAlignment(SwingConstants.LEFT);
+    this.addActionListener(this.controller);
+    this.setActionCommand("Add MOT");
+
     this.fullService = new JButton("Full Service");
     this.fullService.setHorizontalAlignment(SwingConstants.LEFT);
+    this.addActionListener(this.controller);
+    this.setActionCommand("Add Full Service");
+
     this.replaceExhaust = new JButton("Replace Exhaust");
     this.replaceExhaust.setHorizontalAlignment(SwingConstants.LEFT);
+    this.addActionListener(this.controller);
+    this.setActionCommand("Add Replace Exhaust");
+
     this.display = new JLabel();
     this.display.setHorizontalAlignment(SwingConstants.LEFT);
 

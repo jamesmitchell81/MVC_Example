@@ -7,14 +7,22 @@ import java.awt.event.*;
 
 public class ServiceController implements ActionListener
 {
-  // serviceModel, serviceView
-  public ServiceController(ServiceModel sm, ServiceView sv)
-  {
+  private ServiceModel model;
 
+  public ServiceController(ServiceModel sm)
+  {
+    this.model = sm;
   }
 
   public void actionPerformed(ActionEvent eve)
   {
+    // Object src = eve.getSource();
+    String cmb = eve.getActionCommand();
+
+    if ( cmb == "Add Oil Change" )
+    {
+      this.model.addOilChange();
+    }
 
   }
 }
