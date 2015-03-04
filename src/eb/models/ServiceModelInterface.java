@@ -12,6 +12,8 @@ public interface  ServiceModelInterface
   void addReplaceExhaust();
   double getTotalCost();
 
+  void updateServicePrices(Service s);
+
   void addObserver(ObserverInterface obs);
   void removeObserver(ObserverInterface obs);
   void notifyObservers();

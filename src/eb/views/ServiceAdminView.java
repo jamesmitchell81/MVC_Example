@@ -91,7 +91,8 @@ public class ServiceAdminView extends JPanel implements ObserverInterface
       if ( cmb == "Update Values" )
       {
         Service s = new Service()
-        this.model.updateServicePrices();
+
+        this.model.updateServicePrices(s);
 
       }
     }

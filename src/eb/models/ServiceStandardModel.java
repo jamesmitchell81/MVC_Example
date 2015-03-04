@@ -15,6 +15,17 @@ public class ServiceStandardModel implements ServiceModelInterface
     service = new Service();
   }
 
+  public void updateServicePrices(Service s)
+  {
+    this.service = s;
+
+    // get database instance.
+
+    // create query.
+
+    // update database.
+  }
+
   public void addOilChange()
   {
     cost += service.getOilChangeCost();
